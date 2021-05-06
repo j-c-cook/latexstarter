@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage[T1]{fontenc} % necessary for "old text encoding" apparently (like for \k{a} (ogonek used in Polish))
+\usepackage[utf8]{inputenc}
+\pagestyle{empty}
+
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+\setcitestyle{authoryear,open={(},close={)}} %Citation-related commands
+
+\usepackage{circuitikz}
+\usepackage{gensymb}
+
+\usepackage{xcolor}
+\usepackage{soul}
+
+% reduce the margins
+\usepackage[margin=0.75in]{geometry}
+
+% move the title up
+\usepackage{titling}
+\setlength{\droptitle}{-6em}   %
+
+%Date information%
+\usepackage{datetime}
+\newdateformat{monthdayyeardate}{%
+  \monthname[\THEMONTH]~\THEDAY, \THEYEAR}
+
+%Title information here%
+\title{Document TITLE}
+\date{\monthdayyeardate\today}
+\author{Jack C. Cook}
+
+\usepackage{wrapfig}
+
+\graphicspath{ {Sec-Introduction/images/} }
+
+% for tagging
+\usepackage[leqno]{amsmath}
+\makeatletter
+\newcommand{\leqnomode}{\tagsleft@true\let\veqno\@@leqno}
+\newcommand{\reqnomode}{\tagsleft@false\let\veqno\@@eqno}
+\makeatother
+
+
+% for url
+\usepackage[hidelinks]{hyperref}
+% change color of links
+\hypersetup{colorlinks=true,linkcolor=blue, linktocpage}
+
+\hypersetup{colorlinks = true,
+  citecolor=blue,
+  linkcolor=blue,   
+  urlcolor=blue,
+  % link table of contents
+  linktoc=all}
+
+% for graphics and captions of graphics
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% suppress page number
+% \pagenumbering{gobble} 
+\pagenumbering{arabic}
+
+\begin{document}
+
+\maketitle
+
+\input{Sec-Introduction/introduction}
+
+
+\bibliographystyle{apalike}
+\bibliography{
+		Sec-References/Cook_Spitler_2021.bib
+}
+
+
+\end{document}
